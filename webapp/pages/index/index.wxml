@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<import src="../../tpl/notask/notask.wxml" />
+<view class="container">
+  <view class="userinfo" bindtap="bindViewTap">
+    <image class="userinfo-avatar" src="{{user.avatarurl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{user.name}}</text>
+    <image class='arrows' src='../../img/icons/arrows.png'></image>
+  </view>
+  <view class='listbar' bindtap='changeListBar'>
+    <text class='{{activeItem==0?"active":""}}' data-item="0">我的待办({{executeList.length}})</text>
+    <text class='{{activeItem==1?"active":""}}' data-item="1">我的创建({{creatList.length}})</text>
+  </view>
+  <view class='tasklist'>
+    <block wx:if="{{activeItem==0}}">
+      <view wx:if="{{executeList.length==0}}" class='notask-wrap'>
+        <template is="notask" data="{{text:noTaskText}}" />
+      </view>
+      <view wx:else>
+        <litask id='executeList' class="userDetail" liType='0' liData='{{executeList}}'></litask>
+      </view>
+    </block>
+    <block wx:if="{{activeItem==1}}">
+      <view wx:if="{{creatList.length===0}}" class='notask-wrap'>
+        <template is="notask" data="{{text:noTaskText}}" />
+      </view>
+      <view wx:else>
+        <litask id='creatList' class="userDetail" liType='1' liData='{{creatList}}'></litask>
+      </view>
+    </block>
+  </view>
+  <view class='addone' bindtap='addOne'>
+    <icon class='icon-plus' size='50' type='clear' color="rgb(21, 130, 246)"></icon>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+/* pages/create/create.wxss */
+
+page {
+  font-size: 32rpx;
+  line-height: 1.4rem;
+}
+
+.task-title, .task-details, .executor {
+  border-bottom: 1rpx solid #e6e6e6;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20rpx;
+}
+
+.task-title input {
+  font-size: 32rpx;
+}
+
+.executor .content {
+  width: 470rpx;
+}
+
+.executor .imgBox {
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  top: 20rpx;
+  right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.executor .icon {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.label {
+  color: #000;
+  width: 180rpx;
+  line-height: 1.4rem;
+  min-height: 1.4rem;
+}
+
+.content {
+  /* margin:30rpx 20rpx 30rpx 230rpx; */
+  color: #000;
+  width: auto;
+}
+
+.task-details .textarea {
+  width: 520rpx;
+  /* width: auto; */
+  display: block;
+  line-height: 1.4rem;
+}
+
+.placeholder {
+  color: #808080;
+}
+
+.inputHide {
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  visibility: hidden;
+}

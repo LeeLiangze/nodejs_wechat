@@ -1,0 +1,10 @@
+<!--pages/login/login.wxml-->
+<view class='item'>
+  <text class='label'>账号</text>
+  <input class='input' id='username' bindinput='inputing' placeholder='请输入账号'></input>
+</view>
+<view class='item'>
+  <text class='label'>密码</text>
+  <input class='input' id='password' bindinput='inputing' password='true' placeholder='请输入密码'></input>
+</view>
+<button class='button' type='primary' bindtap='login' disabled="{{disabled}}">登录</button>

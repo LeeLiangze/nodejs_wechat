@@ -1,0 +1,77 @@
+<!--pages/detail/detail.wxml-->
+<popup id='popup' class="userDetail" title='人员详情' width='600'>
+  <view class='popupContent'>
+    <view class='list-item'>
+      <text class='label'>姓名</text>
+      <text class='text'>{{popup.name}}</text>
+    </view>
+    <view class='list-item'>
+      <text class='label'>部门</text>
+      <text class='text'>{{popup.branch}}</text>
+    </view>
+    <view class='list-item'>
+      <text class='label'>手机</text>
+      <text class='text'>{{popup.tel}}</text>
+    </view>
+    <view class='list-item'>
+      <text class='label'>邮箱</text>
+      <text class='text'>{{popup.email}}</text>
+    </view>
+  </view>
+</popup>
+
+<import src="../../tpl/comment/comment.wxml" />
+<form class='comment-input' style="display:{{showComment ? 'block' : 'none'}};" bindsubmit="formSubmit" bindreset="formReset">
+  <textarea class='textarea' maxlength='-1' name='comments' fixed placeholder="请输入回复内容" focus='{{showComment}}'/>
+  <view class='buttonBox'>
+    <button class='button' type='default' bindtap='cancel'>取消</button>
+    <button class='button' type='primary' formType="submit">提交</button>
+  </view>
+</form>
+<view class='card' bindtap='editTask'>
+  <view class='circles'>
+    <view class='circle'></view>
+    <view class='circle'></view>
+  </view>
+  <view class='title'>
+    <text>{{task.title}}</text>
+  </view>
+  <view class='desc'>
+    <text class='desc-label'>任务描述：</text>
+    <text class='desc-content'>{{task.desc}}</text>
+  </view>
+  <view class='time'>{{task.relativeTime}}</view>
+</view>
+<view class='list'>
+  <view class='list-item'>
+    <text>创建人</text>
+    <text bindtap='showPopupCreator' id='{{creator.id}}'>{{creator.name}}</text>
+  </view>
+  <view class='list-item'>
+    <text>执行人</text>
+    <view class='executorBox'>
+      <text wx:for="{{executor}}" wx:key='id' data-index='{{index}}' bindtap='showPopupExecutor'>{{item.name}}<block wx:if='{{index!=executor.length-1}}'>，</block></text>
+    </view>
+  </view>
+  <view class='list-item'>
+    <text>团队名称</text>
+    <text>{{creator.branch}}</text>
+  </view>
+</view>
+<view class='list'>
+  <view class='list-item'>
+    <text>追加信息</text>
+    <view wx:if='{{unable}}' class='plusBox' bindtap='goComment'>
+      <icon class='icon-plus' size='25' type='clear' color="rgb(21, 130, 246)"></icon>
+    </view>
+    <view wx:else class='plusBox' bindtap='unableMsg'>
+      <icon class='icon-plus opacity ' size='25' type='clear' color="rgb(21, 130, 246)"></icon>
+    </view>
+  </view>
+  <view>
+    <block wx:for="{{comments}}" wx:key='id'>
+      <template is="comment" data="{{item}}" />
+    </block>
+  </view>
+</view>
+<button type='primary' disabled='{{okButton.disabled}}' bindtap='{{unable?"bindComplate":"unableMsg"}}'>{{okButton.text}}</button>

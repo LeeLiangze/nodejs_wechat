@@ -1,0 +1,34 @@
+{
+  "name": "vtask",
+  "version": "1.0.0",
+  "description": "task manager app",
+  "dependencies": {
+    "cmos": "^2.0.12-alpha",
+    "cmos-bin": "^2.0.12-alpha",
+    "cmos-core": "^2.0.12-alpha",
+    "cmos-cors": "^2.0.12-alpha",
+    "cmos-jwt": "^2.0.12-alpha",
+    "cmos-mock": "^2.0.12-alpha",
+    "cmos-multipart": "^2.0.12-alpha",
+    "cmos-sequelize": "^2.0.12-alpha",
+    "cmos-validate": "^2.0.12-alpha",
+    "cmos-view-nunjucks": "^2.0.12-alpha",
+    "co-fs": "^1.2.0",
+    "crypto": "0.0.3",
+    "crypto-js": "^3.1.9-1",
+    "moment": "^2.20.1",
+    "mysql2": "^1.4.0",
+    "stream-wormhole": "^1.0.3"
+  },
+  "devDependencies": {
+    "autod": "^2.7.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "cmos-bin dev",
+    "autod": "autod"
+  }
+}

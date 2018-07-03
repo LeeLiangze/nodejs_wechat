@@ -1,0 +1,9 @@
+<view class="popupBox {{top=='center'?'popupBox-flex':''}}" hidden='{{hidden}}'>
+  <view class='popup {{top=="center"?"":"popupBox-ab"}}'  style='width:{{width}}rpx;top:{{top=="center"?"":top}}'>
+    <view class='title'>
+      <text>{{title}}</text>
+      <icon type="cancel" size="20" color="purple" bindtap='hidePopup'></icon>
+    </view>
+    <slot></slot>
+  </view>
+</view>

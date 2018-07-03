@@ -1,0 +1,75 @@
+/**index.wxss**/
+@import "../../tpl/notask/notask.wxss";
+
+/* @import "../../tpl/litask/litask.wxss"; */
+
+.userinfo {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx 40rpx;
+  background-color: rgb(21, 130, 246);
+  color: #fff;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+
+.listbar {
+  display: flex;
+  width: 100%;
+  background-color: rgb(240, 240, 252);
+}
+
+.listbar .active {
+  color: rgb(21, 130, 246);
+}
+
+.listbar>text {
+  width: 50%;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 32rpx;
+}
+
+.notask-wrap {
+  margin-top: 200rpx;
+}
+
+.addone {
+  position: fixed;
+  bottom: 80rpx;
+  right: 40rpx;
+}
+
+.icon-plus {
+  width: 100rpx;
+  height: 100rpx;
+  transform: rotate(45deg);
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.tasklist {
+  width: 100%;
+}
+
+.arrows {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  width: 25rpx;
+  height: 25rpx;
+  right: 40rpx;
+}

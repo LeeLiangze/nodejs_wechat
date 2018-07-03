@@ -1,0 +1,49 @@
+/* pages/userinfo/userinfo.wxss */
+
+page {
+  background-color: rgb(247, 246, 249);
+}
+
+.item {
+  position: relative;
+}
+
+.label {
+  display: block;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(247, 246, 249);
+  padding: 0 40rpx;
+}
+
+.department, .picker, .input {
+  height: 100rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+  background-color: #fff;
+}
+
+.department {
+  position: absolute;
+  width: 100%;
+  padding-left: 40rpx;
+  z-index: 1;
+  color: #808080;
+}
+
+.admin {
+  text-align: center;
+}
+
+.pickerBox {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.lucency {
+  opacity: 0;
+}

@@ -1,0 +1,22 @@
+/* pages/login/login.wxss */
+
+.item {
+  position: relative;
+}
+.button{
+  margin: 40rpx;
+}
+.label {
+  display: block;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  background-color: rgb(247, 246, 249);
+  padding: 0 40rpx;
+}
+.input {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+  background-color: #fff;
+}

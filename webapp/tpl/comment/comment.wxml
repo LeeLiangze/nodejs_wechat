@@ -1,0 +1,18 @@
+<!--tpl/comment/comment.wxml-->
+<template name="comment">
+  <view class='comment' bindlongpress='longpressAnswer' data-id='{{item.id}}' data-uid='{{item.uid}}'>
+    <view class='headimg'>
+      <image src='{{item.avatarurl}}'></image>
+    </view>
+    <view class='info'>
+      <view class='row1'>
+        <text>{{item.name}}</text>
+        <text>{{item.relativeTime}}</text>
+      </view>
+      <view class='row2'>
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+
+</template>

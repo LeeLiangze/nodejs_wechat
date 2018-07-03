@@ -1,0 +1,17 @@
+<!--pages/search/search.wxml-->
+<import src="../../tpl/notask/notask.wxml" />
+<view class='search'>
+  <input placeholder="搜索内容" auto-focus bindblur='search' />
+  <icon type='search' size='25'></icon>
+</view>
+<view wx:if="{{noResult}}" class='notask-wrap'>
+  <template is="notask" data="{{text:noTaskText}}" />
+</view>
+<view wx:else>
+  <view class='tasklist' wx:for="{{listData}}" wx:for-item="group" wx:key='uuid'>
+    <view wx:if="{{group.data.length>0}}">
+      <text class='section-title'>{{group.title}}</text>
+      <litask id='group' class="userDetail" liType='2' liData='{{group.data}}'></litask>
+    </view>
+  </view>
+</view>

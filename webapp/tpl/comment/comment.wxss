@@ -1,0 +1,27 @@
+/* tpl/comment/comment.wxss */
+.comment{
+  display: flex;
+  padding:20rpx;
+border-bottom:1px solid #ccc;
+
+}
+.headimg{
+  flex: 0 0 90rpx;
+}
+.headimg image{
+width:80rpx;
+height:80rpx;
+border-radius:10rpx;
+
+}
+.info{
+  flex: 1 1 100%;
+}
+.info .row1{
+  display: flex;
+  justify-content: space-between;
+}
+.info .row2{
+  font-size: 28rpx;
+  line-height: 1.5;
+}

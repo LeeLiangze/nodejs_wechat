@@ -1,0 +1,75 @@
+<template name="userList">
+  <view class='left'>
+    <image src='{{item.avatarurl}}'></image>
+    <text>{{item.name}}</text>
+  </view>
+  <view class='right'>
+    <view class='item'>
+      <text>电话：</text>
+      <text>{{item.tel}}</text>
+    </view>
+    <view class='item'>
+      <text>部门：</text>
+      <text>{{item.branch}}</text>
+    </view>
+    <view class='item'>
+      <text>邮箱：</text>
+      <text>{{item.email}}</text>
+    </view>
+    <button bindtap='changeStatus' size='mini' type='primary' data-id='{{index}}' data-type='{{stateActive}}'>修改</button>
+  </view>
+</template>
+<view wx:if='{{bottomActive==0}}' class='tabBarBox'>
+  <view class='tabBar stateTab' bindtap='changeStateBar'>
+    <text class='tabItem {{stateActive==0?"active":""}}' data-item="0">待审核({{wait.length}})</text>
+    <text class='tabItem {{stateActive==1?"active":""}}' data-item="1">已通过({{normal.length}})</text>
+    <text class='tabItem {{stateActive==2?"active":""}}' data-item="2">已拒绝({{reject.length}})</text>
+  </view>
+
+  <view class='userList' hidden='{{stateActive!=0}}'>
+    <view class='userListItem' wx:for='{{wait}}' wx:key='*this'>
+      <template is="userList" data="{{item,index,stateActive}}" />
+    </view>
+  </view>
+  <view class='userList' hidden='{{stateActive!=1}}'>
+    <view class='userListItem' wx:for='{{normal}}' wx:key='*this'>
+      <template is="userList" data="{{item,index,stateActive}}" />
+    </view>
+  </view>
+  <view class='userList' hidden='{{stateActive!=2}}'>
+    <view class='userListItem' wx:for='{{reject}}' wx:key='*this'>
+      <template is="userList" data="{{item,index,stateActive}}" />
+    </view>
+  </view>
+</view>
+<view wx:if='{{bottomActive==1}}'>
+  <block wx:for='{{branchGroup}}' wx:key='id'>
+    <view class='branchItem' data-id='item.id'>
+      <view class='branch'>
+        <image src='/img/icons/icon-group.png'></image>
+        <text wx:if='{{branchGroupStatus[item.id]}}'>{{item.branch}}</text>
+        <input wx:else='{{branchGroupStatus[item.id]}}' focus="{{!branchGroupStatus[item.id]}}" value='{{item.branch}}'></input>
+      </view>
+      <button wx:if='{{branchGroupStatus[item.id]}}' bindtap='changeBranch' size='mini' type='primary' data-id='{{item.id}}'>修改</button>
+      <button wx:else='{{branchGroupStatus[item.id]}}' bindtap='changeBranch' size='mini' type='primary' data-id='{{item.id}}'>保存</button>
+    </view>
+  </block>
+  <view class='addone' bindtap='addOne'>
+    <image class='icon-plus' src="/img/icons/icon-plus.png"></image>
+  </view>
+</view>
+<view class='bottomTab tabBar'>
+  <view class='tabItem {{bottomActive==0?"active":""}}' bindtap='changeBottomBar' data-item="0">
+    <image src='/img/icons/icon-user{{bottomActive==0?"-a":""}}.png'></image>
+    <text>人员管理</text>
+  </view>
+  <view class='tabItem {{bottomActive==1?"active":""}}' bindtap='changeBottomBar' data-item="1">
+    <image src='/img/icons/icon-group{{bottomActive==1?"-a":""}}.png'></image>
+    <text>部门管理</text>
+  </view>
+</view>
+<popup id='popup' class="userDetail" top='200rpx' title='添加组' width='500'>
+  <text>组名</text>
+  <input class='addGroupInput' focus='{{addGroupInput}}'></input>
+  <button bindtap='addOk'>确定添加</button>
+</popup>

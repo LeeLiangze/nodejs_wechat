@@ -1,0 +1,29 @@
+/* pages/search/search.wxss */
+@import "../../tpl/notask/notask.wxss";
+/* @import "../../tpl/litask/litask.wxss"; */
+.search{
+  position: relative;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+}
+.search input{
+  border: 1px solid #ccc;
+  font-size: 28rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 40rpx;
+}
+.search icon{
+  position: absolute;
+  top: 35rpx;
+  right: 35rpx;
+}
+.section-title{
+  display: block;
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+  color: rgb(200, 200, 200);
+  text-align: center;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+}

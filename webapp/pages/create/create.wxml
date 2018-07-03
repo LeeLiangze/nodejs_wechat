@@ -1,0 +1,30 @@
+<!--pages/create/create.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='task-title'>
+    <view class='label'>任务标题</view>
+    <view class='content'>
+      <input name='title' placeholder="请输入任务标题" value='{{title}}' />
+    </view>
+  </view>
+  <view class='executor' bindtap='selectExecutor'>
+    <view class='label'>执行人</view>
+    <view class='imgBox'>
+      <image class="icon" src="/img/icons/arrows.png"></image>
+    </view>
+    <view class='content'>
+      <block wx:if='{{!executor}}'>
+        <view class='placeholder'>请选择</view>
+      </block>
+      {{executor}}
+      <input class='inputHide' disabled='true' name='executor' value='{{executor}}'></input>
+    </view>
+    <!-- <view class='icon'></view> -->
+  </view>
+  <view class='task-details'>
+    <view class='label'>任务详情</view>
+    <view class='content'>
+      <textarea class='textarea' name='desc' placeholder="请输入任务描述" value='{{desc}}' maxlength='-1' />
+    </view>
+  </view>
+  <button formType="submit" disabled='{{disabled}}' class='confirm' type="primary">确定</button>
+</form>

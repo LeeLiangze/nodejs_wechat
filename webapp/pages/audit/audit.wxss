@@ -1,0 +1,113 @@
+/* pages/audit/audit.wxss */
+page{
+  border-top: 1rpx #ccc solid;
+}
+.tabBar {
+  position: fixed;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.bottomTab {
+  bottom: 0;
+  height: 120rpx;
+  border-top: 1rpx #ccc solid;
+}
+.tabBarBox{
+  margin-bottom: 120rpx;
+}
+
+.tabItem {
+  text-align: center;
+}
+
+.tabItem.active {
+  color: #1582f6;
+}
+
+.bottomTab .tabItem > image {
+  height: 60rpx;
+  width: 60rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.stateTab{
+  top: 0;
+  height: 80rpx;
+  border-bottom: 1rpx #ccc solid;
+}
+.tabBarBox{
+  padding-top: 80rpx;
+}
+.userListItem{
+  padding: 10rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userListItem .left{
+/* width: 200rpx; */
+flex:2.1;
+text-align: center;
+}
+.userListItem .right{
+  flex: 7.9;
+  position: relative;
+}
+.userListItem .right button{
+  position: absolute;
+  margin: 0;
+  right: 20rpx;
+  top: 20rpx;
+}
+.userListItem image{
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  margin: 0 auto;
+}
+.userListItem .detail{
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.branchItem{
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx #ccc solid;
+}
+.branchItem image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+.branchItem button{
+  margin: 0;
+}
+.branch{
+   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.branch input{
+  margin: 0;
+}
+.addone{
+  position: fixed;
+  bottom: 130rpx;
+  right: 40rpx;
+}
+.icon-plus{
+width: 100rpx;
+height: 100rpx;
+}

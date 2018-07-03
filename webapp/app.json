@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/route/route",
+    "pages/userinfo/userinfo",
+    "pages/index/index",
+    "pages/create/create",
+    "pages/audit/audit",
+    "pages/detail/detail",
+    "pages/executor/executor",
+    "pages/search/search",
+    "pages/login/login",
+    "component/litask/litask"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "任务在线",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#1582F6",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "iconPath": "/img/icons/icon-index.png",
+        "selectedIconPath": "/img/icons/icon-index-a.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "/img/icons/icon-search.png",
+        "selectedIconPath": "/img/icons/icon-search-a.png",
+        "pagePath": "pages/search/search",
+        "text": "搜索"
+      }
+    ]
+  }
+}

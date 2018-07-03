@@ -1,0 +1,21 @@
+   <block wx:for="{{liData}}" wx:key='uuid'>
+    <view bindlongpress='longpress' bindtap='toDetail' data-uuid='{{item.uuid}}' data-creater_id='{{item.creater_id}}'>
+      <view class='litask'>
+        <view class='status'>
+          <icon type="{{item.status==0?'waiting':'success'}}" size="15" />
+        </view>
+        <view class='headimg'>
+          <image src='{{item.avatarurl}}'></image>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='taskinfo'>
+          <text class='tasktitle'>{{item.title}}</text>
+          <view class='taskcreater'>
+            <text class='executors'>{{item.executors}}</text>
+            <text class='time'>{{item.relativeTime}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block> 
+  <slot></slot>

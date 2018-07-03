@@ -1,0 +1,105 @@
+/* pages/executor/executor.wxss */
+
+page {
+  background-color: #eee;
+}
+.executor-list{
+  margin-top: 96rpx;
+}
+.executor-list-item {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.executor-list-item:first-child {
+  margin-top: 0;
+}
+
+.executor-list-item-hd {
+  position: relative;
+  padding: 18rpx 0 18rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #e6e6e6;
+}
+
+.executor-list-img-icon {
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+}
+
+.executor-list-text {
+  flex: 1;
+}
+
+.executor-list-item-bd {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.executor-list-item-bd-show {
+  height: auto;
+}
+
+.executorBox {
+  position: relative;
+  padding: 18rpx 30rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #e6e6e6;
+}
+
+.executorBox text {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.title {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18rpx 30rpx;
+  border-bottom: 1rpx #ccc solid;
+  background-color: #fff;
+  z-index: 9999;
+}
+button {
+  margin: 0;
+}
+.checkbox{
+  width: 48rpx;
+  height: 48rpx;
+  border: 1rpx #eee solid;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.headPortrait {
+  width: 98rpx;
+  height: 98rpx;
+}
+.arrows {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  width: 25rpx;
+  height: 25rpx;
+  right: 40rpx;
+}
+.arrowsUp{
+  transform:rotate(-90deg);
+}
+.arrowsDown{
+  transform:rotate(90deg);
+} 
+button[type='primary'][size='mini'] {
+  margin: 0rpx;
+}

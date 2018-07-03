@@ -1,0 +1,27 @@
+<!--pages/executor/executor.wxml-->
+<view class='title'>
+  <text>请选择执行人</text>
+  <button size='mini' type='primary' formType="submit" bindtap='ok'>完成</button>
+</view>
+<view class="executor-list">
+  <view class=" executor-list-item" wx:for="{{list}}" wx:for-index="idx" wx:for-item="branchItem" wx:key='branch'>
+    <view data-index="{{idx}}" class="executor-list-item-hd {{branchItem.open ? 'executor-list-item-hd-show' : ''}} " bindtap="executorToggle">
+      <image class="executor-list-img-icon " src="/img/icons/icon-group-a.png "></image>
+      <view class="executor-list-text ">{{branchItem.branch}}</view>
+      <image class="arrows {{branchItem.open ? 'arrowsUp' : 'arrowsDown'}}" src="/img/icons/arrows.png "></image>
+    </view>
+    <view class="executor-list-item-bd {{branchItem.open ? 'executor-list-item-bd-show' : ''}} ">
+      <block wx:for="{{branchItem.users}}" wx:key="id">
+        <view class="executorBox" data-idx="{{idx}}" data-index='{{index}}' bindtap='checkboxChange'>
+          <image class="headPortrait" src="{{item.avatarurl}}"></image>
+          <text>{{item.name}}</text>
+          <view class='checkbox'>
+            <block wx:if="{{item.checked}}">
+              <icon type="success_no_circle" size="20" />
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+/* 蓝色 #1582F6 */
+
+/* 灰色 #8a8a8a */
+
+/* 边框 #eee */
+
+/**app.wxss**/
+
+page {
+  font-size: 28rpx;
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 200rpx 0; */
+  box-sizing: border-box;
+}
+
+button[type='primary'] {
+  margin: 40rpx;
+  background-color: rgb(21, 130, 246);
+  color: #fff;
+}
+
+button[type='primary'][disabled] {
+   background-color: rgba(21, 130, 246, 0.6); 
+}
+button[type='primary'].button-hover{
+  background-color: rgb(17, 115, 221);
+}
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
